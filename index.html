@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lab3</title>
+
+    <script>
+        var minV, maxV;
+        function getValues() {
+            minV = prompt("Write min value", 0);
+            maxV = prompt("Write max value", 0);
+        }
+
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random()
+                * (max - min)) + +min;
+        }
+
+        function draw() {
+            getValues();
+
+            document.write('<table border="1">');
+            for (i = 0; i < 10; i++) {
+                document.writeln("<tr style='color'>");
+                for (j = 0; j < 10; j++) {
+                    if ((i + j) % 2 == 0)
+                        document.write("<td style='background-color: black; color: white; width: 50px; height: 50px; text-align: center'>" +getRandomInt(minV, maxV)+ "<\/td>");
+                    else
+                        document.write("<td style='text-align: center'>" +getRandomInt(minV, maxV)+ "<\/td>");
+                }
+                document.writeln("<\/tr>");
+            }
+            document.write("<\/table> ");
+        }
+    </script>
+</head>
+
+<body onLoad="draw()">
+</body>
+
+</html>
